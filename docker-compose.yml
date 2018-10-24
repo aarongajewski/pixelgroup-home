@@ -1,0 +1,8 @@
+uwsgi:
+  image: "aaroncircleci/pixelgroup-home-uwsgi:${CIRCLE_SHA1}"
+nginx:
+  image: "aaroncircleci/pixelgroup-home-nginx:${CIRCLE_SHA1}"
+  links:
+    - uwsgi
+  ports:
+    - "${NGINX_PORT}"
