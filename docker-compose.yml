@@ -1,0 +1,10 @@
+uwsgi:
+  image: "${DOCKER_USER}/pixelgroup-home-uwsgi:${CIRCLE_SHA1}"
+  container_name: uswgi_1
+nginx:
+  image: "${DOCKER_USER}/pixelgroup-home-nginx:${CIRCLE_SHA1}"
+  container_name: nginx_1
+  links:
+    - uwsgi
+  ports:
+    - "${NGINX_PORT}"
