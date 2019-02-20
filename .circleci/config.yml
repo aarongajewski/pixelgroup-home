@@ -24,9 +24,6 @@ jobs:
       - run: docker push ${DOCKER_USER}/pixelgroup-home-uwsgi:${CIRCLE_SHA1}
       - run: docker push ${DOCKER_USER}/pixelgroup-home-nginx:${CIRCLE_SHA1}
 
-
-
-
   test:
     working_directory: ~/pixelgroup-home
     docker:
